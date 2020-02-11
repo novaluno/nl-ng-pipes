@@ -1,8 +1,9 @@
-import { NgModule, Optional, SkipSelf, ModuleWithProviders, APP_INITIALIZER } from '@angular/core';
+import { NgModule, Optional, SkipSelf, ModuleWithProviders, APP_INITIALIZER, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppSettingsService } from './app-settings.service';
 import { LocalizationService } from './localization.service';
 import { LanguageService } from './language.service';
+import { SessionService } from './session.service';
 
 export function appSettingServiceFactory(appSettingsService: AppSettingsService) {
   return () => appSettingsService.load();
@@ -35,6 +36,11 @@ export class ServicesModule {
           useFactory: appSettingServiceFactory,
           deps: [AppSettingsService],
           multi: true
+        },
+        {
+          provide: LOCALE_ID,
+          deps: [SessionService],
+          useFactory: (sessionService) => sessionService.locale
         },
         LocalizationService,
         LanguageService

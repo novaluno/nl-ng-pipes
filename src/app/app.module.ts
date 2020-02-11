@@ -17,9 +17,10 @@ import { AboutComponent } from './about/about.component';
 import { PipesModule } from './pipes/pipes.module';
 import { DatePipeDemosComponent } from './date-pipe-demos/date-pipe-demos.component';
 import { BooleanPipeDemosComponent } from './boolean-pipe-demos/boolean-pipe-demos.component';
-import { DatePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { DateTimePipeDemosComponent } from './date-time-pipe-demos/date-time-pipe-demos.component';
 import { DateUtcPipeDemosComponent } from './date-utc-pipe-demos/date-utc-pipe-demos.component';
+import { NumberPipeDemosComponent } from './number-pipe-demos/number-pipe-demos.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DateUtcPipeDemosComponent } from './date-utc-pipe-demos/date-utc-pipe-d
     DatePipeDemosComponent,
     BooleanPipeDemosComponent,
     DateTimePipeDemosComponent,
-    DateUtcPipeDemosComponent
+    DateUtcPipeDemosComponent,
+    NumberPipeDemosComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { DateUtcPipeDemosComponent } from './date-utc-pipe-demos/date-utc-pipe-d
   ],
   providers: [
     Title,
-    DatePipe
+    DatePipe,
+    DecimalPipe
   ],
   bootstrap: [AppComponent]
 })

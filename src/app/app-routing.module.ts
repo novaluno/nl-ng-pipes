@@ -10,6 +10,7 @@ import { BooleanPipeDemosComponent } from './boolean-pipe-demos/boolean-pipe-dem
 import { DatePipeDemosComponent } from './date-pipe-demos/date-pipe-demos.component';
 import { DateTimePipeDemosComponent } from './date-time-pipe-demos/date-time-pipe-demos.component';
 import { DateUtcPipeDemosComponent } from './date-utc-pipe-demos/date-utc-pipe-demos.component';
+import { NumberPipeDemosComponent } from './number-pipe-demos/number-pipe-demos.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,13 @@ const routes: Routes = [
     component: DateTimePipeDemosComponent,
     data: {
       title: 'Date Time Pipe Demos'
+    }
+  },
+  {
+    path: 'number-pipe-demos',
+    component: NumberPipeDemosComponent,
+    data: {
+      title: 'Number Pipe Demos'
     }
   },
   {

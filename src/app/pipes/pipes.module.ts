@@ -6,6 +6,7 @@ import { TranslateBooleanPipe } from './translate-boolean.pipe';
 import { DateOriginPipe } from './date-origin.pipe';
 import { DateTimeOriginPipe } from './date-time-origin.pipe';
 import { DateUtcPipe } from './date-utc.pipe';
+import { LocalizeNumberPipe } from './localize-number.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DateUtcPipe } from './date-utc.pipe';
     TranslateBooleanPipe,
     DateOriginPipe,
     DateTimeOriginPipe,
-    DateUtcPipe
+    DateUtcPipe,
+    LocalizeNumberPipe
   ],
   imports: [
     CommonModule
@@ -25,7 +27,8 @@ import { DateUtcPipe } from './date-utc.pipe';
     TranslateBooleanPipe,
     DateOriginPipe,
     DateTimeOriginPipe,
-    DateUtcPipe
+    DateUtcPipe,
+    LocalizeNumberPipe
   ]
 })
 export class PipesModule {
@@ -46,7 +49,8 @@ export class PipesModule {
         TranslateBooleanPipe,
         DateOriginPipe,
         DateTimeOriginPipe,
-        DateUtcPipe
+        DateUtcPipe,
+        LocalizeNumberPipe
       ]
     };
   }
