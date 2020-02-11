@@ -6,13 +6,13 @@ import { LanguageService } from '../services/language.service';
 })
 export class TranslateBooleanPipe implements PipeTransform {
 
-  constructor(@Optional() private languageService: LanguageService) {
+  constructor() {
 
   }
 
   transform(value: any): unknown {
     // tslint:disable-next-line: no-construct
-    return this.isTrue(value) ? this.languageService.translate('Yes') : this.languageService.translate('No');
+    return this.isTrue(value) ? 'Yes' : 'No';
   }
 
   isTrue(value) {
