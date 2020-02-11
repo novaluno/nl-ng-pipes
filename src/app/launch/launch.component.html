@@ -1,1 +1,56 @@
 <h1>Start Me Up!</h1>
+
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <input type="text" [(ngModel)]="filteredStatus">
+        <br>
+        <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+        <br><br>
+        <h2>App Status: {{ appStatus | async}}</h2>
+        <hr>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let server of servers | filter:filteredStatus:'status'"
+            [ngClass]="getStatusClasses(server)">
+            <span
+              class="badge">
+              {{ server.status }}
+            </span>
+            <strong>{{ server.name | shorten:15 }}</strong> |
+            {{ server.instanceType | uppercase }} |
+            {{ server.started | date:'fullDate' | uppercase }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Boolean Pipe</h2>
+    <hr/>
+    <div>true = {{ true | translateBoolean }}</div>
+    <div>'true' = {{ 'true' | translateBoolean }}</div>
+    <div>'True' = {{ 'True' | translateBoolean }}</div>
+    <div>'on' = {{ 'on' | translateBoolean }}</div>
+    <div>'On' = {{ 'On' | translateBoolean }}</div>
+    <div>'yes' = {{ 'yes' | translateBoolean }}</div>
+    <div>'Yes' = {{ 'Yes' | translateBoolean }}</div>
+    <div>1 = {{ 1 | translateBoolean }}</div>
+    <div>'1' = {{ '1' | translateBoolean }}</div>
+    
+    <div>false = {{ false | translateBoolean }}</div>
+    <div>'false' = {{ 'false' | translateBoolean }}</div>
+    <div>'False' = {{ 'False' | translateBoolean }}</div>
+    <div>'off' = {{ 'off' | translateBoolean }}</div>
+    <div>'Off' = {{ 'Off' | translateBoolean }}</div>
+    <div>'no' = {{ 'no' | translateBoolean }}</div>
+    <div>'No' = {{ 'No' | translateBoolean }}</div>
+    <div>0 = {{ 0 | translateBoolean }}</div>
+    <div>'0' = {{ '0' | translateBoolean }}</div>
+
+    <div>'' = {{ '' | translateBoolean }}</div>
+    <div>undefined = {{ undefined | translateBoolean }}</div>
+    <div>null = {{ null | translateBoolean }}</div>
+  </div>

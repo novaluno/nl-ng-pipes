@@ -14,6 +14,7 @@ import { ServicesModule } from './services/services.module';
 import { ComponentsModule } from './components/components.module';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AboutComponent } from './about/about.component';
     HttpClientModule,
     ServicesModule.forRoot(),
     ComponentsModule.forRoot(),
+    PipesModule.forRoot(),
     AppRoutingModule
   ],
   providers: [

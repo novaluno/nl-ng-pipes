@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 import { PrimaryNavbarComponent } from './primary-navbar/primary-navbar.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { PrimaryNavbarComponent } from './primary-navbar/primary-navbar.componen
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ],
   exports: [
     CommonModule,
     PageHeaderComponent,
     PageFooterComponent,
-    PrimaryNavbarComponent
+    PrimaryNavbarComponent,
+    PipesModule
   ]
 })
 export class ComponentsModule {
