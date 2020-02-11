@@ -1,14 +1,20 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ShortenPipe } from './shorten.pipe';
 import { FilterPipe } from './filter.pipe';
 import { TranslateBooleanPipe } from './translate-boolean.pipe';
+import { DateOriginPipe } from './date-origin.pipe';
+import { DateTimeOriginPipe } from './date-time-origin.pipe';
+import { DateUtcPipe } from './date-utc.pipe';
 
 @NgModule({
   declarations: [
     ShortenPipe,
     FilterPipe,
-    TranslateBooleanPipe
+    TranslateBooleanPipe,
+    DateOriginPipe,
+    DateTimeOriginPipe,
+    DateUtcPipe
   ],
   imports: [
     CommonModule
@@ -16,7 +22,10 @@ import { TranslateBooleanPipe } from './translate-boolean.pipe';
   exports: [
     ShortenPipe,
     FilterPipe,
-    TranslateBooleanPipe
+    TranslateBooleanPipe,
+    DateOriginPipe,
+    DateTimeOriginPipe,
+    DateUtcPipe
   ]
 })
 export class PipesModule {
@@ -32,7 +41,12 @@ export class PipesModule {
     return {
       ngModule: PipesModule,
       providers: [
-
+        ShortenPipe,
+        FilterPipe,
+        TranslateBooleanPipe,
+        DateOriginPipe,
+        DateTimeOriginPipe,
+        DateUtcPipe
       ]
     };
   }

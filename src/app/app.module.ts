@@ -15,6 +15,11 @@ import { ComponentsModule } from './components/components.module';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { PipesModule } from './pipes/pipes.module';
+import { DatePipeDemosComponent } from './date-pipe-demos/date-pipe-demos.component';
+import { BooleanPipeDemosComponent } from './boolean-pipe-demos/boolean-pipe-demos.component';
+import { DatePipe } from '@angular/common';
+import { DateTimePipeDemosComponent } from './date-time-pipe-demos/date-time-pipe-demos.component';
+import { DateUtcPipeDemosComponent } from './date-utc-pipe-demos/date-utc-pipe-demos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { PipesModule } from './pipes/pipes.module';
     ErrorComponent,
     NotFoundComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    DatePipeDemosComponent,
+    BooleanPipeDemosComponent,
+    DateTimePipeDemosComponent,
+    DateUtcPipeDemosComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,8 @@ import { PipesModule } from './pipes/pipes.module';
     AppRoutingModule
   ],
   providers: [
-    Title
+    Title,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
