@@ -1,2 +1,2 @@
-# nl-ng-barebones
-A Barebones Angular Starter
+# nl-ng-pipe
+An Angular SPA with Pipes
