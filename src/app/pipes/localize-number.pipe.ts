@@ -35,7 +35,7 @@ export class LocalizeNumberPipe implements PipeTransform {
     private sessionService: SessionService
   ) { }
 
-  transform(value: any): string {
+  transform(value: any, fractionSize?: number): string {
 
     if (!lodash.isNumber(value)) {
       value = parseFloat(value);
@@ -45,6 +45,13 @@ export class LocalizeNumberPipe implements PipeTransform {
       return null;
     }
 
-    return this.decimalPipe.transform(value, LocalizeNumberPipe.fractionDigits, this.sessionService.locale);
+    if (!!fractionSize && fractionSize >= 0) {
+      LocalizeNumberPipe.fractionDigits = `1.0-${fractionSize}`;
+    }
+
+    const fractionDigits = LocalizeNumberPipe.fractionDigits;
+    const locale = this.sessionService.locale;
+
+    return this.decimalPipe.transform(value, fractionDigits, locale);
   }
 }

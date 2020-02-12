@@ -9,6 +9,10 @@ export function appSettingServiceFactory(appSettingsService: AppSettingsService)
   return () => appSettingsService.load();
 }
 
+export function localeServiceFactory(localeService: SessionService) {
+  return () => localeService.locale;
+}
+
 @NgModule({
   declarations: [
 
@@ -33,14 +37,14 @@ export class ServicesModule {
         AppSettingsService,
         {
           provide: APP_INITIALIZER,
-          useFactory: appSettingServiceFactory,
           deps: [AppSettingsService],
+          useFactory: appSettingServiceFactory,
           multi: true
         },
         {
           provide: LOCALE_ID,
           deps: [SessionService],
-          useFactory: (sessionService) => sessionService.locale
+          useFactory: localeServiceFactory
         },
         LocalizationService,
         LanguageService
